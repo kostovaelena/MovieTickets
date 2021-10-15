@@ -1,0 +1,46 @@
+﻿@model MovieTickets.Domain.Movie
+
+@{
+    ViewData["Title"] = "Details";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<br />
+
+
+<div class="container">
+    <div class="card mb-3" style="max-width: 1080px;border:double; border-color:white; background-color: rgba(110, 7, 10, 0.86); color:white ">
+        <div class="row g-0">
+            <div class="col-md-4">
+                <img src="@Model.Image" style="width:300px; height:430px; margin-left: 28px; margin-top: 28px;" class="img-fluid rounded" alt="...">
+            </div>
+            <div class="col-md-8">
+                <div class="card-body">
+                    <h5 class="card-title">@Model.Name</h5>
+                    <p><i>@Model.Traenje min | @Model.Godina</i></p>
+                    <p class="card-text">@Model.Description</p>
+
+                    <p class="card-text">Country of origin:  <i>@Model.Zemja</i></p>
+
+                    @*<p class="card-text">Category:  <i>@Model.Zanr</i></p>*@
+                    <p class="card-text">Cast: <i>@Model.Akteri </i></p>
+                    <p class="card-text">Suitable for: <i>@Model.Kategorija year olds </i></p>
+                    <p class="card-text">Rating: <i> @Model.Rating </i></p>
+
+
+                </div>
+            </div>
+        </div>
+
+        <div style=" margin-top: 8px; margin-left: 818px;">
+
+
+            <a asp-controller="Movies" asp-action="Index" asp-route-id="@Model.Id" style=" font-size: 25px; width: 126px; margin-top: -30px;" class="btn btn-warning">Back</a>
+            @if (User.IsInRole("Administrator"))
+            {
+                <a asp-controller="Movies" asp-action="Edit" asp-route-id="@Model.Id" style=" font-size: 25px; width: 126px; margin-top: -30px;" class="btn btn-light">Edit</a>
+            }
+        </div>
+
+    </div>
+</div>

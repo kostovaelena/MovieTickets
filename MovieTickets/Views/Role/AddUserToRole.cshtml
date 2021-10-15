@@ -1,0 +1,43 @@
+﻿@{
+    ViewData["Title"] = "Create";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<div class="eden" style="background-color: rgba(110, 7, 10, 0.86); color: white ">
+
+    <div class="container">
+
+        <br/>
+        <br/>
+        <h1><i>Add User To Role</i></h1>
+        <hr />
+        <div class="row">
+            <div class="col-md-4">
+                <form action="/Role/AddUserToRole" method="POST">
+                    <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+                    <div class="form-group">
+                        <label class="control-label"></label>
+                        <input name="email" class="form-control" />
+                    </div>
+                    <div class="form-group">
+                        <label class="control-label"></label>
+                        <select name="role" class="form-control">
+                            <option value="Administrator">Administrator</option>
+                            <option value="User">User</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <input type="submit" value="Add Role To User" class="btn btn-primary" />
+                        <a  asp-controller="Role" asp-action="Create" class="btn btn-info">Create User Role</a>
+
+                    </div>
+                    <br/>
+                    <br/>
+                </form>
+            </div>
+        </div>
+        </div>
+    </div>
+        @section Scripts {
+            @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+        }

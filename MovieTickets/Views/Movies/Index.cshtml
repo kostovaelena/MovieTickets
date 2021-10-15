@@ -1,0 +1,89 @@
+﻿@model List<MovieTickets.Domain.Movie>
+
+@{
+    ViewData["Title"] = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<div class="eden" >
+
+    <div class="container">
+
+
+        <div class="m-3">
+            <a class="btn btn-success" asp-controller="Movies" asp-action="FilteredTickets">Filtered Tickets by Valid Date</a>
+           @* <a class="btn btn-primary" asp-controller="Movies" asp-action="ExportMovies">Export Movies</a>*@
+
+        </div>
+        <form style="margin-left: 422px; margin-top: -77px;" action="/Movies/FilterByGenre" method="GET">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <div class="form-group" style="margin-left: 11px;">
+                <label class="control-label"></label>
+                <select style="width: 150px;" name="genre" class="form-control">
+                    <option value="ADVENTURE">Adventure</option>
+                    <option value="ROMANCE">Romance</option>
+                    <option value="DRAMA">Drama</option>
+                    <option value="FANTASY">Fantasy</option>
+                </select>
+                <span class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <input style=" margin-left: 174px; margin-top: -99px;" type="submit" value="Filter" class="btn btn-primary" />
+            </div>
+        </form>
+
+
+        @for (int i = 0; i < Model.Count; i++)
+        {
+            var item = Model[i];
+
+            if (i % 3 == 0)
+            {
+                @:<div class="row" style="line-height: 0">
+                }
+
+
+                <div class="col-md-3 m-4">
+                    <div class="card rounded" style="width: 18rem; height: 35rem; border:double; color:#160080; border-color:#8368D5; ">
+                        <img class="card-img-top" src="@item.Image" style="width: 260px; margin-top: 8px; height: 318px; margin-left:13px;" alt="Image for product!" />
+
+                        <div class="card-body" style="text-align:center">
+                            <h5 class="card-title">@item.Name</h5>
+                            <h5 class="card-title">@item.ValidDate</h5>
+
+                            <br />
+
+                            <h4>Price: $@item.Price</h4>
+                            <br />
+                        </div>
+
+                        <div class="card-footer">
+                            @if (User.IsInRole("Administrator") || User.IsInRole("User"))
+                            {
+                                <a asp-controller="Movies" asp-action="AddToShoppingCart" asp-route-id="@item.Id" class="btn btn-outline-success">Add to Cart</a>
+                            }
+                            <a asp-controller="Movies" asp-action="Details" asp-route-id="@item.Id" class="btn btn-outline-primary">Details</a>
+
+                            @if (User.IsInRole("Administrator"))
+                            {
+                                <a style=" font-size: 9px;" asp-controller="Movies" asp-action="Delete" asp-route-id="@item.Id" class="btn btn-danger">Delete</a>
+
+                            }
+                        </div>
+                    </div>
+
+                </div>
+                if (i % 3 == 2)
+                {
+                @:</div>
+            }
+        }
+
+
+
+
+
+
+    </div>
+
+    </div>

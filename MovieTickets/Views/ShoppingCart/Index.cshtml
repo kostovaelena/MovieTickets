@@ -1,0 +1,61 @@
+﻿@model MovieTickets.Domain.ShoppingCartDto
+
+@{ ViewData["Title"] = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml"; }
+
+<br />
+<div class="eden" style="color:white; background-color: rgba(110, 7, 10, 0.86)">
+    <div class="container">
+
+        <div class="row m-4">
+            <table class="table" style="color:white; font-size:20px">
+                <thead class="thead-light">
+                    <tr>
+                        <th scope="col">#</th>
+                        <th scope="col">Movie</th>
+                        <th scope="col">Quantity</th>
+                        <th scope="col">Price</th>
+                        <th></th>
+                    </tr>
+                </thead>
+                <tbody>
+                    @if (Model.Movies.Count == 0)
+                    {
+        <tr>
+            <td colspan="5" style="color:white; text-align:center; font-size:25px"><b>No active Products</b></td>
+        </tr>
+ }
+    else
+    {
+@for (int i = 0; i < Model.Movies.Count; i++)
+{
+    var item = Model.Movies[i];
+
+<tr>
+    <th scope="row">@(i + 1)</th>
+    <td><b>@item.Movie.Name</b></td>
+    <td><b>@item.Quantity</b></td>
+    <td><b>@item.Movie.Price</b></td>
+    <td><a asp-controller="ShoppingCart" asp-action="DeleteFromShoppingCart" asp-route-id="@item.MovieId" class="btn btn-outline-danger">Delete this item</a></td>
+</tr>
+}}
+                </tbody>
+                <tfoot class="thead-light">
+                    <tr>
+                        <th scope="col">Total Price:</th>
+                        <th scope="col"></th>
+                        <th scope="col"></th>
+                        <th scope="col"></th>
+                        <th scope="col">$@Model.TotalPrice</th>
+                    </tr>
+                </tfoot>
+            </table>
+        </div>
+
+        <div class="row m-4">
+            <a asp-controller="ShoppingCart" asp-action="Order" style=" margin-left: 445px; font-size: 33px; border:solid; border-color:white" class="btn btn-info">Order Now</a>
+        </div>
+
+    </div>
+
+</div>

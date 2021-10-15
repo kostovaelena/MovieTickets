@@ -1,0 +1,37 @@
+﻿@model MovieTickets.Domain.AddToShoppingCart
+
+@{ ViewData["Title"] = "Add To Shopping Card";
+   Layout = "~/Views/Shared/_Layout.cshtml"; }
+
+
+<br/>
+<br/>
+<br/>
+<div class="eden" style="color:white; text-align:center">
+    <br/>
+<h1><i>Add The Selected Movie to The Cart:</i></h1>
+
+
+<hr />
+
+<div class="row">
+    <div class="col-md-4 m-auto">
+        <form asp-action="AddToShoppingCart" method="post">
+            <input type="hidden" asp-for="MovieId" />
+            <div class="form-group">
+                
+                <input disabled asp-for="SelectedMovie.Name" class="form-control" />
+            </div>
+
+            <div class="form-group">
+                <label asp-for="Quantity"></label>
+                <input asp-for="Quantity" class="form-control" />
+            </div>
+
+            <div class="form-group">
+                <input type="submit" value="Save" class="btn btn-primary" />
+            </div>
+        </form>
+    </div>
+</div>
+</div>

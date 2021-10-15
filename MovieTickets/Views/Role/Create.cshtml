@@ -1,0 +1,38 @@
+﻿@model MovieTickets.Domain.UserRole
+
+@{ 
+    ViewData["Title"] = "Create";
+} 
+
+<div class="eden" style="background-color: rgba(110, 7, 10, 0.86); color: white ">
+
+<div class="container" style="margin-left: 379px;">
+    <br/>
+    <br/>
+<h1><i>Create User Role</i></h1>
+
+
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form asp-action="Create">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <div class="form-group">
+                <label asp-for="RoleName" class="custom-control-label"></label>
+                <input asp-for="RoleName" class="form-control" />
+                <span asp-validation-for="RoleName" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Create" class="btn btn-primary" />
+            </div>
+        </form>
+    </div>
+</div>
+
+
+
+    <br/>
+    <br/>
+
+</div>
+</div>

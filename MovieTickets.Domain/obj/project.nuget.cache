@@ -1,0 +1,23 @@
+{
+  "version": 2,
+  "dgSpecHash": "OcdxFi9HGZ+ZwOwQfsn1ViqCuvAGnx+IzbpDsQZH6JUZIwR1PNoWjsThXD2EPxfEUWVLp8AP2ekVS5wVllzQcQ==",
+  "success": true,
+  "projectFilePath": "C:\\Users\\x\\Desktop\\Elena\\IS\\MovieTickets\\MovieTickets.Domain\\MovieTickets.Domain.csproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\x\\.nuget\\packages\\microsoft.aspnetcore.cryptography.internal\\3.1.12\\microsoft.aspnetcore.cryptography.internal.3.1.12.nupkg.sha512",
+    "C:\\Users\\x\\.nuget\\packages\\microsoft.aspnetcore.cryptography.keyderivation\\3.1.12\\microsoft.aspnetcore.cryptography.keyderivation.3.1.12.nupkg.sha512",
+    "C:\\Users\\x\\.nuget\\packages\\microsoft.extensions.caching.abstractions\\3.1.12\\microsoft.extensions.caching.abstractions.3.1.12.nupkg.sha512",
+    "C:\\Users\\x\\.nuget\\packages\\microsoft.extensions.configuration\\3.1.12\\microsoft.extensions.configuration.3.1.12.nupkg.sha512",
+    "C:\\Users\\x\\.nuget\\packages\\microsoft.extensions.configuration.abstractions\\3.1.12\\microsoft.extensions.configuration.abstractions.3.1.12.nupkg.sha512",
+    "C:\\Users\\x\\.nuget\\packages\\microsoft.extensions.configuration.binder\\3.1.12\\microsoft.extensions.configuration.binder.3.1.12.nupkg.sha512",
+    "C:\\Users\\x\\.nuget\\packages\\microsoft.extensions.dependencyinjection\\3.1.12\\microsoft.extensions.dependencyinjection.3.1.12.nupkg.sha512",
+    "C:\\Users\\x\\.nuget\\packages\\microsoft.extensions.dependencyinjection.abstractions\\3.1.12\\microsoft.extensions.dependencyinjection.abstractions.3.1.12.nupkg.sha512",
+    "C:\\Users\\x\\.nuget\\packages\\microsoft.extensions.identity.core\\3.1.12\\microsoft.extensions.identity.core.3.1.12.nupkg.sha512",
+    "C:\\Users\\x\\.nuget\\packages\\microsoft.extensions.identity.stores\\3.1.12\\microsoft.extensions.identity.stores.3.1.12.nupkg.sha512",
+    "C:\\Users\\x\\.nuget\\packages\\microsoft.extensions.logging\\3.1.12\\microsoft.extensions.logging.3.1.12.nupkg.sha512",
+    "C:\\Users\\x\\.nuget\\packages\\microsoft.extensions.logging.abstractions\\3.1.12\\microsoft.extensions.logging.abstractions.3.1.12.nupkg.sha512",
+    "C:\\Users\\x\\.nuget\\packages\\microsoft.extensions.options\\3.1.12\\microsoft.extensions.options.3.1.12.nupkg.sha512",
+    "C:\\Users\\x\\.nuget\\packages\\microsoft.extensions.primitives\\3.1.12\\microsoft.extensions.primitives.3.1.12.nupkg.sha512"
+  ],
+  "logs": []
+}

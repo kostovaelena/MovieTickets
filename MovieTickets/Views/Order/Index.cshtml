@@ -1,0 +1,45 @@
+﻿
+@model List<MovieTickets.Domain.Order>
+
+<div class="eden" style="background-color: rgba(110, 7, 10, 0.86)" >
+
+    <div class="container">
+
+
+
+        <table class="table mt-5" style="color: white; font-size: 22px; ">
+            <thead class="thead-light">
+                <tr>
+                    <th scope="col">#</th>
+                    <th scope="col">Costumer Details</th>
+                    <th scope="col">Number of products</th>
+                    <th></th>
+                    <th></th>
+                </tr>
+            </thead>
+            <tbody>
+                @for (int i = 0; i < Model.Count; i++)
+                {
+                    var item = Model[i];
+
+    <tr>
+        <th scope="row">@(i+1)</th>
+        <td>@item.User.Email</td>
+        <td>@item.MovieInOrders.Count()</td>
+        <td><a class="btn btn-light" asp-action="Details" asp-route-id="@item.Id">Details</a></td>
+        <td><a class="btn btn-light" asp-action="CreateInvoice" asp-route-id="@item.Id">Create Invoice</a></td>
+    </tr>            }
+            </tbody>
+
+
+        </table>
+         @if (User.IsInRole("Administrator"))
+         {
+        <div class="row" style=" margin-left: 452px;">
+            <a style="font-size: 27px;" class="btn btn-success" asp-controller="Order" asp-action="ExportAllOrders">Export Orders</a>
+        </div>
+         }
+        <br/>
+
+    </div>
+</div>
