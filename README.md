@@ -15,7 +15,7 @@
 * Delete tickets from your shopping cart
 * In the "Order" section, you can see the details of all orders, and for each order create an invoice as a pdf document 
 * You can export all orders in excel document
-* In the "Import Users" tab, you can import users from excel document. Each user is imported with their email, password and password confirmation 
+* In the "Import Users" tab, you can import users from excel document. Each user is imported with their email, password and password confirmation (Use the User.xlsx file for this purpose)
 * In the role assignment tab ("Add User To Role"), you can assign an administrator role to any registered user, or assign a user role to any administrator.
 
 ##### Login as a User:
